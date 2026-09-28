@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المخزن | Wholesale & Warehouse Supply</title>
+<meta name="description" content="المخزن — wholesale supply, warehousing and fast delivery for retailers and businesses in Cairo, Egypt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Narrow:wght@500;600;700&family=Tajawal:wght@700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --kraft:#e9dcc3;
+    --kraft-2:#dccbab;
+    --kraft-3:#cdb98f;
+    --ink:#1d1a14;
+    --ink-soft:#4a4335;
+    --stencil:#d1421f;
+    --stencil-dark:#a8321a;
+    --paper:#faf5e8;
+    --line:rgba(29,26,20,0.22);
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--kraft);
+    color:var(--ink);
+    font-family:'Archivo', sans-serif;
+    overflow-x:hidden;
+    line-height:1.7;
+  }
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .container{max-width:1200px; margin:0 auto; padding:0 6vw;}
+
+  h1,h2,h3{font-family:'Archivo', sans-serif; font-weight:900; letter-spacing:-0.02em; text-transform:uppercase;}
+  .ar{font-family:'Tajawal', sans-serif; font-weight:900; direction:rtl; unicode-bidi:isolate; text-transform:none; letter-spacing:0;}
+
+  .eyebrow{
+    font-family:var(--mono); font-size:0.78rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--stencil-dark); font-weight:600;
+    display:inline-block; border:2px solid var(--stencil-dark); padding:4px 12px; margin-bottom:18px;
+    transform:rotate(-1.5deg);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:fixed; inset:0 0 auto 0; z-index:100;
+    background:var(--ink);
+    border-bottom:4px solid var(--stencil);
+  }
+  .nav-wrap{max-width:1200px; margin:0 auto; padding:14px 6vw; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{color:var(--kraft); font-size:2.1rem; line-height:1.2; white-space:nowrap;}
+  nav ul{display:flex; gap:28px;}
+  nav a{font-size:0.9rem; color:var(--kraft-3); transition:color .2s; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;}
+  nav a:hover{color:#fff;}
+  .nav-cta{
+    background:var(--stencil); color:#fff;
+    font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;
+    padding:12px 22px; transition:transform .2s ease, background .2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px); background:var(--stencil-dark);}
+  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .burger span{width:24px; height:3px; background:var(--kraft);}
+
+  /* ---------- Hero ---------- */
+  .hero{min-height:100vh; display:flex; align-items:center; padding-top:120px; position:relative;}
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px; align-items:center; width:100%;}
+  .hero h1{font-size:clamp(2.6rem, 6.2vw, 4.6rem); line-height:1.02; margin-bottom:24px;}
+  .hero h1 .hl{color:var(--stencil);}
+  .hero .lead{font-size:1.15rem; color:var(--ink-soft); max-width:500px; margin-bottom:40px; font-weight:500;}
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:16px 30px; font-weight:800; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.04em; border:3px solid var(--ink); cursor:pointer; transition:transform .2s ease, background .2s ease, color .2s ease;}
+  .btn-primary{background:var(--stencil); color:#fff; border-color:var(--stencil);}
+  .btn-primary:hover{transform:translateY(-3px); background:var(--stencil-dark); border-color:var(--stencil-dark);}
+  .btn-ghost{background:transparent; color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--kraft);}
+
+  .crate{
+    position:relative; aspect-ratio:1/1; background:var(--kraft-2);
+    border:5px solid var(--ink);
+    background-image:
+      linear-gradient(90deg, transparent 47%, var(--ink) 47%, var(--ink) 53%, transparent 53%),
+      linear-gradient(0deg, transparent 47%, var(--ink) 47%, var(--ink) 53%, transparent 53%);
+    background-size:100% 100%;
+    background-blend-mode:multiply;
+  }
+  .crate::before{content:""; position:absolute; inset:0; background:repeating-linear-gradient(0deg, rgba(29,26,20,0.06) 0 2px, transparent 2px 22px);}
+  .crate-label{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) rotate(-3deg);
+    background:var(--kraft); border:4px solid var(--stencil); color:var(--stencil-dark);
+    padding:18px 26px; text-align:center; font-family:var(--mono); font-weight:600; font-size:0.85rem; letter-spacing:0.1em; line-height:1.7;
+  }
+  .crate-label b{display:block; font-family:'Archivo', sans-serif; font-weight:900; font-size:1.8rem; letter-spacing:0; text-transform:uppercase;}
+
+  /* ---------- Ticker ---------- */
+  .ticker{background:var(--ink); border-top:4px solid var(--stencil); padding:16px 0; overflow:hidden; white-space:nowrap;}
+  .ticker-track{display:inline-flex; gap:50px; animation:scroll-x 26s linear infinite;}
+  .ticker-track span{font-family:var(--mono); font-size:0.88rem; font-weight:600; letter-spacing:0.08em; color:var(--kraft); display:inline-flex; align-items:center; gap:14px;}
+  .ticker-track span::after{content:"■"; color:var(--stencil); font-size:0.6rem;}
+  @keyframes scroll-x{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- Sections ---------- */
+  section{padding:110px 0;}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:30px; margin-bottom:56px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(2rem, 4.6vw, 3rem); line-height:1.05;}
+  .section-head p{color:var(--ink-soft); max-width:380px; font-size:1rem; font-weight:500;}
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- Categories ---------- */
+  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:4px solid var(--ink);}
+  .cat-card{background:var(--paper); padding:38px 28px; border-right:4px solid var(--ink); border-bottom:4px solid var(--ink); transition:background .25s ease;}
+  .cat-card:nth-child(3n){border-right:none;}
+  .cat-card:nth-last-child(-n+3){border-bottom:none;}
+  .cat-card:hover{background:var(--kraft-2);}
+  .cat-num{font-family:var(--mono); color:var(--stencil-dark); font-size:0.9rem; font-weight:600; margin-bottom:20px; display:block;}
+  .cat-card h3{font-size:1.25rem; margin-bottom:10px; line-height:1.15;}
+  .cat-card p{color:var(--ink-soft); font-size:0.95rem; font-weight:500;}
+
+  /* ---------- Why us ---------- */
+  .why-wrap{background:var(--ink); color:var(--kraft);}
+  .why-wrap .section-head h2{color:var(--kraft);}
+  .why-wrap .eyebrow{color:#ff8a6a; border-color:#ff8a6a;}
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:3px solid var(--kraft-3);}
+  .why-item{padding:34px 24px; border-right:3px solid var(--kraft-3);}
+  .why-item:last-child{border-right:none;}
+  .why-icon{width:46px; height:46px; margin-bottom:18px; background:var(--stencil); display:flex; align-items:center; justify-content:center;}
+  .why-icon svg{width:22px; height:22px; stroke:#fff;}
+  .why-item h3{font-size:1.05rem; margin-bottom:8px; color:var(--kraft);}
+  .why-item p{font-size:0.9rem; color:var(--kraft-3); font-weight:500;}
+
+  /* ---------- Stats ---------- */
+  .stats-strip{background:var(--stencil); padding:50px 0; border-top:4px solid var(--ink); border-bottom:4px solid var(--ink);}
+  .stats-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px;}
+  .stat b{font-family:'Archivo', sans-serif; font-weight:900; font-size:2.4rem; color:#fff; display:block; text-transform:uppercase;}
+  .stat span{font-family:var(--mono); font-size:0.78rem; color:var(--ink); font-weight:600; letter-spacing:0.08em;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .info-row{display:flex; gap:20px; padding:20px 0; border-bottom:3px solid var(--ink);}
+  .info-row:first-child{border-top:3px solid var(--ink);}
+  .info-row .label{font-family:var(--mono); font-size:0.76rem; font-weight:600; color:var(--stencil-dark); width:110px; flex-shrink:0; padding-top:3px; letter-spacing:0.08em;}
+  .info-row .value{font-weight:600;}
+  .info-row .value a{color:var(--stencil-dark); font-weight:800;}
+  .contact-cta{background:var(--ink); color:var(--kraft); border:4px solid var(--ink); padding:48px 38px; position:relative;}
+  .contact-cta::after{content:""; position:absolute; inset:8px; border:2px dashed var(--kraft-3); opacity:0.4; pointer-events:none;}
+  .contact-cta h3{font-size:1.6rem; margin-bottom:16px; color:var(--kraft);}
+  .contact-cta p{color:var(--kraft-3); margin-bottom:28px; font-size:1rem; font-weight:500; position:relative; z-index:1;}
+  .contact-cta .btn{position:relative; z-index:1;}
+
+  footer{background:var(--ink); color:var(--kraft); padding:50px 0 34px; border-top:4px solid var(--stencil);}
+  .footer-grid{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;}
+  .footer-brand{font-size:2.4rem; line-height:1.2; color:var(--kraft);}
+  .footer-meta{font-family:var(--mono); font-size:0.76rem; color:var(--kraft-3); margin-top:6px; letter-spacing:0.06em;}
+  .footer-links{display:flex; gap:24px;}
+  .footer-links a{font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--kraft-3); transition:color .2s;}
+  .footer-links a:hover{color:#fff;}
+
+  @media (max-width:880px){
+    nav ul, .nav-cta{display:none;}
+    .burger{display:flex;}
+    .brand{font-size:1.7rem;}
+    .hero-grid{grid-template-columns:1fr;}
+    .crate{order:-1; max-width:280px; margin:0 auto;}
+    .cat-grid, .why-grid{grid-template-columns:1fr;}
+    .cat-card, .cat-card:nth-child(3n){border-right:none;}
+    .cat-card:nth-last-child(-n+3){border-bottom:4px solid var(--ink);}
+    .cat-card:last-child{border-bottom:none;}
+    .why-item{border-right:none; border-bottom:3px solid var(--kraft-3);}
+    .why-item:last-child{border-bottom:none;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+    section{padding:70px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="brand ar">المخزن</div>
+    <nav>
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cta">Request a Quote</a>
+    <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">WHOLESALE & WAREHOUSE SUPPLY</div>
+      <h1>Stocked, sorted and <span class="hl">shipped fast</span></h1>
+      <p class="lead">المخزن keeps the goods your business runs on in stock — wholesale pricing, organized warehousing and quick delivery across Cairo and beyond.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn btn-primary">Request a quote →</a>
+        <a href="#products" class="btn btn-ghost">Browse categories</a>
+      </div>
+    </div>
+    <div class="crate">
+      <div class="crate-label">
+        <span>HANDLE WITH CARE</span>
+        <b>In Stock</b>
+        <span>CAIRO · EGYPT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>WHOLESALE SUPPLY</span>
+    <span>BULK ORDERS</span>
+    <span>WAREHOUSING</span>
+    <span>SAME-DAY DISPATCH</span>
+    <span>RETAIL PARTNERS</span>
+    <span>INVENTORY MANAGEMENT</span>
+    <span>WHOLESALE SUPPLY</span>
+    <span>BULK ORDERS</span>
+    <span>WAREHOUSING</span>
+    <span>SAME-DAY DISPATCH</span>
+    <span>RETAIL PARTNERS</span>
+    <span>INVENTORY MANAGEMENT</span>
+  </div>
+</div>
+
+<section id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">WHAT WE DO</span>
+        <h2>Everything on the shelf</h2>
+      </div>
+      <p>Six ways we keep your business supplied — from a single pallet to a standing order.</p>
+    </div>
+    <div class="cat-grid reveal">
+      <div class="cat-card">
+        <span class="cat-num">01</span>
+        <h3>Wholesale Supply</h3>
+        <p>Goods at trade prices for shops, restaurants and contractors.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">02</span>
+        <h3>Bulk Orders</h3>
+        <p>Large quantities packed and ready, with volume pricing.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">03</span>
+        <h3>Warehousing</h3>
+        <p>Secure, organized storage for your own stock.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">04</span>
+        <h3>Same-Day Dispatch</h3>
+        <p>Orders confirmed in the morning leave the warehouse that day.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">05</span>
+        <h3>Retail Partners</h3>
+        <p>Standing supply arrangements so your shelves never run empty.</p>
+      </div>
+      <div class="cat-card">
+        <span class="cat-num">06</span>
+        <h3>Inventory Management</h3>
+        <p>Clear stock counts and reorder reminders for regular buyers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="why-wrap" id="why">
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">WHY EL MOKHAZAN</span>
+          <h2>A supplier you can count on</h2>
+        </div>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Always In Stock</h3>
+          <p>Deep inventory, so your orders don't wait on restocking.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7h18M3 12h18M3 17h12" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+          <h3>Trade Pricing</h3>
+          <p>Clear wholesale rates with no surprise fees.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+          <h3>Fast Delivery</h3>
+          <p>Reliable dispatch across Cairo and neighboring cities.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm0-11v3l2 2" stroke-width="2.2"/></svg></div>
+          <h3>Direct Contact</h3>
+          <p>One number to call, and a person who picks up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="stats-strip">
+  <div class="container stats-grid reveal">
+    <div class="stat"><b>06</b><span>SERVICE LINES</span></div>
+    <div class="stat"><b>CAIRO</b><span>HOME BASE</span></div>
+    <div class="stat"><b>24H</b><span>QUOTE RESPONSE</span></div>
+    <div class="stat"><b>01</b><span>NUMBER TO CALL</span></div>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">CONTACT</span>
+        <h2>Place your order</h2>
+      </div>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <div class="info-row">
+          <span class="label">COMPANY</span>
+          <span class="value ar" style="font-size:1.3rem;">المخزن</span>
+        </div>
+        <div class="info-row">
+          <span class="label">ADDRESS</span>
+          <span class="value">15 Ramses St, Cairo, Cairo 11522, Egypt</span>
+        </div>
+        <div class="info-row">
+          <span class="label">PHONE</span>
+          <span class="value"><a href="tel:+201088776655">+20 108 877 6655</a></span>
+        </div>
+        <div class="info-row">
+          <span class="label">WEBSITE</span>
+          <span class="value"><a href="https://elmokhazan.online/" target="_blank" rel="noopener">elmokhazan.online</a></span>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <h3>Need a quote?</h3>
+        <p>Tell us what you need and how much — we'll come back with pricing and a delivery date within a day.</p>
+        <a href="tel:+201088776655" class="btn btn-primary">Call +20 108 877 6655</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand ar">المخزن</div>
+      <p class="footer-meta">© 2026 — ALL RIGHTS RESERVED</p>
+    </div>
+    <div class="footer-links">
+      <a href="#products">Products</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  const burger = document.querySelector('.burger');
+  const navEl = document.querySelector('nav');
+  burger.addEventListener('click', ()=>{
+    navEl.style.display = navEl.style.display === 'block' ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>
